@@ -412,6 +412,13 @@ h4 {
     background-color: var(--white);
 }
 
+/* Responsive 3-column grid */
+.three-col-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
 .four-col-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -593,11 +600,17 @@ h4 {
     /* Trust Bar Stacking */
     .trust-content {
         flex-direction: column;
-        gap: 20px;
-        align-items: flex-start;
-        /* Or center if preferred, but usually aligned left is safer for list-like */
+        gap: 30px;
+        align-items: center;
+        /* Center items */
         padding: 0 20px;
     }
+
+    .trust-item {
+        width: 100%;
+        justify-content: center;
+    }
+
 
     /* Split Content */
     .split-container {
@@ -640,6 +653,11 @@ h4 {
         grid-template-columns: 1fr 1fr;
         /* 2 col on tablet */
     }
+
+    .three-col-grid {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 @media (max-width: 480px) {
