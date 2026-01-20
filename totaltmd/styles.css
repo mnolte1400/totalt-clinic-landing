@@ -1,0 +1,637 @@
+:root {
+    --primary-blue: #0088cc;
+    /* Total T MD Blue */
+    --accent-orange: #0088cc;
+    /* Use Blue for CTAs to match reference or keep orange if reference has orange? */
+    /* Reference image for Total T MD has Blue buttons "Get Started". */
+    --accent-orange-hover: #006699;
+    --text-dark: #333333;
+    --text-light: #666666;
+    --white: #ffffff;
+    --light-bg: #f5f7fa;
+    --border-color: #e1e4e8;
+    --max-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--white);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography Utils */
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Roboto Condensed', sans-serif;
+    /* Headings often condensed in these styles */
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--accent-orange);
+    color: var(--white);
+    padding: 12px 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    /* Slightly rounded */
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-orange-hover);
+}
+
+.btn-large {
+    padding: 16px 32px;
+    font-size: 1.25rem;
+}
+
+/* Top Bar */
+.top-bar {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 15px 0;
+    /* Increased padding */
+    font-size: 1rem;
+    /* Slightly larger text */
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-image {
+    height: 60px;
+    /* Placeholder logo size */
+    width: auto;
+    max-width: 100%;
+    /* Ensure it resizes if needed */
+    display: block;
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-weight: 600;
+}
+
+.phone-number {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-orange);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 600px;
+    /* Adjust as needed */
+    background: url('assets/hero_bg.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    /* Slight dim */
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.hero-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.hero-card h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.hero-subhead {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--primary-blue);
+}
+
+.hero-body {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+    color: var(--text-dark);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+}
+
+.video-placeholder {
+    width: 200px;
+    height: 120px;
+    background-color: #000;
+    position: relative;
+    flex-shrink: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-group {
+    flex: 1;
+}
+
+.cta-text {
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--primary-blue);
+}
+
+.sub-cta {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+/* Testimonials Bar */
+.testimonials-bar {
+    background-color: #1a1a1a;
+    /* Dark background like screenshot */
+    color: var(--white);
+    padding: 60px 0;
+}
+
+.section-title-dark {
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.8rem;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.profile-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-orange);
+}
+
+.testimonial-header h4 {
+    margin-bottom: 2px;
+    color: var(--white);
+    /* White text for names */
+}
+
+.verified {
+    font-size: 0.75rem;
+    color: var(--accent-orange);
+    /* Matching checkmarks or stars usually */
+    text-transform: uppercase;
+    font-weight: 700;
+    display: block;
+}
+
+.stars {
+    color: #ffc107;
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+/* Trust Bar */
+.trust-bar {
+    background-color: #f0f2f5;
+    padding: 30px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.trust-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.trust-icon {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    /* Or a seal image */
+}
+
+.trust-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+}
+
+/* Main Content Split */
+.content-split {
+    padding: 80px 0;
+}
+
+.split-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.split-text {
+    flex: 1;
+}
+
+.split-image {
+    flex: 1;
+}
+
+.split-image img {
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.eyebrow {
+    color: var(--accent-orange);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.split-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.feature-list {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.feature-list li {
+    padding-left: 25px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.feature-list li::before {
+    content: "✓";
+    color: #28a745;
+    /* Green checks */
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Why Choose / Combined Section */
+.why-choose-section {
+    padding: 100px 0;
+    background-color: var(--white);
+}
+
+.four-col-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+/* Fallback for responsive if needed, though media queries usually handle it at bottom of file */
+.grid-card {
+    position: relative;
+    /* Base styles if needed */
+}
+
+.mb-50 {
+    margin-bottom: 50px;
+}
+
+.center-block {
+    display: block;
+    text-align: center;
+}
+
+.section-title-blue {
+    color: var(--primary-blue);
+    font-size: 2.2rem;
+}
+
+.feature-card {
+    text-align: left;
+    /* Aligned left like the reference usually is, or center? Reference for aviation school looks centered actually. Let's stick to center for now unless requested otherwise */
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    transition: transform 0.2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card img {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    min-height: 2.5em;
+    /* Alignment */
+}
+
+.feature-card p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--light-bg);
+    padding: 80px 0;
+    border-top: 1px solid #ddd;
+}
+
+.main-footer h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.footer-note {
+    margin-top: 15px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .top-bar-content {
+        flex-direction: row;
+        /* Keep row */
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        text-align: right;
+        /* Text aligns right */
+    }
+
+    .top-bar-left {
+        flex: 0 0 auto;
+    }
+
+    /* Fix logo aspect ratio */
+    .logo-image {
+        max-width: 120px;
+        /* Limit logo width */
+        height: auto;
+        /* Allow height to scale naturally */
+    }
+
+    .top-bar-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        /* Align right */
+        gap: 2px;
+    }
+
+    /* Hide the 15,000+ Men text on mobile to match reference simplicity */
+    .top-bar-right>span:first-child {
+        display: none;
+    }
+
+    .phone-number {
+        font-size: 1.1rem;
+        order: 2;
+        /* Ensure phone bold is 2nd */
+        white-space: nowrap;
+    }
+
+    .phone-link {
+        font-size: 0.7rem;
+        order: 1;
+        /* Helper text 1st */
+        line-height: 1.2;
+    }
+
+    /* Fix stack order and sizing */
+    .hero {
+        height: auto;
+        /* Allow auto height */
+        min-height: 600px;
+        /* But keep a minimum */
+        padding: 40px 0;
+        margin-top: 0;
+    }
+
+    .hero-container {
+        padding: 0 15px;
+    }
+
+    .hero-card {
+        padding: 30px 20px;
+        margin: 0 auto;
+        /* Remove side margins that squeeze it */
+        width: 100%;
+    }
+
+    .hero-card h1 {
+        font-size: 2rem;
+        /* Smaller heading on mobile */
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-group {
+        text-align: center;
+        /* Center text under video */
+        width: 100%;
+        /* Ensure it takes full width */
+    }
+
+    .video-placeholder {
+        width: 100%;
+        max-width: 300px;
+        height: 180px;
+        margin-bottom: 20px;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Trust Bar Stacking */
+    .trust-content {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+        /* Or center if preferred, but usually aligned left is safer for list-like */
+        padding: 0 20px;
+    }
+
+    /* Split Content */
+    .split-container {
+        flex-direction: column;
+    }
+
+    .split-image {
+        order: -1;
+        /* Image on top on mobile like reference often does, or at least separate clearly */
+        margin-bottom: 30px;
+    }
+
+    /* Center the button in split section on mobile */
+    .split-text {
+        text-align: center;
+    }
+
+    .split-text .btn-primary {
+        display: inline-block;
+        /* Ensure centered text-align works */
+    }
+
+    .feature-list {
+        text-align: left;
+        /* Keep list left aligned even if container centers */
+        display: inline-block;
+        /* allows it to be centered as a block if needed, or just keep left */
+    }
+
+    /* Reduce white space on mobile */
+    .content-split {
+        padding: 40px 0;
+    }
+
+    .why-choose-section {
+        padding: 50px 0;
+    }
+
+    .four-col-grid {
+        grid-template-columns: 1fr 1fr;
+        /* 2 col on tablet */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-card h1 {
+        font-size: 1.75rem;
+        /* Even smaller for phones */
+    }
+
+    .four-col-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .top-bar {
+        padding-bottom: 20px;
+    }
+
+    .trust-item {
+        width: 100%;
+        /* Ensure items take width */
+    }
+}
