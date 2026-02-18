@@ -106,6 +106,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (window.dataLayer) {
                     window.dataLayer.push({ event: 't_test_modal_submit_success' });
                 }
+                
+                // Meta Pixel Lead Tracking
+                if (typeof fbq === 'function') {
+                    fbq('track', 'Lead');
+                }
 
                 // Google Ads Conversion
                 if (typeof gtag === 'function') {
