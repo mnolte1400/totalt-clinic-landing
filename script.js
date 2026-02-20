@@ -106,9 +106,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (window.dataLayer) {
                     window.dataLayer.push({ event: 't_test_modal_submit_success' });
                 }
-                
-                // Meta Pixel Lead Tracking
+
+                // Meta Pixel Lead Tracking with Advanced Matching
                 if (typeof fbq === 'function') {
+                    // Re-initialize to send user data, greatly improving conversion match rate
+                    fbq('init', '2482097602059049', {
+                        em: data.email,
+                        ph: data.phone,
+                        fn: data.firstName,
+                        ln: data.lastName
+                    });
                     fbq('track', 'Lead');
                 }
 
